@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.wingmann'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    mainClass = 'com.wingmann.snake.Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:32.1.1-jre'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': application.mainClass
+    }
+
+    def dependencies = configurations
+            .runtimeClasspath
+            .collect { zipTree(it) }
+
+    from(dependencies)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
