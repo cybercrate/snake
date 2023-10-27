@@ -1,4 +1,13 @@
-package com.wingmann.snake;
+package com.wingmann.snake.scene;
+
+import com.wingmann.snake.data.Constants;
+import com.wingmann.snake.game.Game;
+import com.wingmann.snake.gameobjects.Apple;
+import com.wingmann.snake.gameobjects.Snake;
+import com.wingmann.snake.gameobjects.SnakePart;
+import com.wingmann.snake.util.Direction;
+import com.wingmann.snake.util.Input;
+import com.wingmann.snake.util.Timer;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -21,7 +30,7 @@ public class GameScene extends Scene {
     @Override
     public void update(long timePassed) {
         if (gameIsOver()) {
-            game.setScene(new GameOverScene(game));
+            getGame().setScene(new GameOverScene(getGame()));
             return;
         }
         processInput();
@@ -61,13 +70,13 @@ public class GameScene extends Scene {
     @Override
     public void draw(Graphics2D graphics) {
         graphics.setColor(Color.BLACK);
-        graphics.fillRect(0, 0, game.getWidth(), game.getHeight());
+        graphics.fillRect(0, 0, getGame().getWidth(), getGame().getHeight());
         drawSnake(graphics);
         drawApple(graphics);
     }
 
     private void processInput() {
-        for (Input.Event event : game.getInput().consumeEvents()) {
+        for (Input.Event event : getGame().getInput().consumeEvents()) {
             if (event instanceof Input.Event.KeyPressed) {
                 KeyEvent data = ((Input.Event.KeyPressed) event).data;
 
@@ -87,7 +96,7 @@ public class GameScene extends Scene {
         for (SnakePart part : snake.body) {
             graphics.fillRect(
                     part.getX() * Constants.CELL_SIZE - Constants.CELL_SIZE,
-                    game.getScreenSize().height - part.getY() * Constants.CELL_SIZE,
+                    getGame().getScreenSize().height - part.getY() * Constants.CELL_SIZE,
                     Constants.CELL_SIZE,
                     Constants.CELL_SIZE);
         }
@@ -98,7 +107,7 @@ public class GameScene extends Scene {
 
         graphics.fillRect(
                 apple.getX() * Constants.CELL_SIZE - Constants.CELL_SIZE,
-                game.getScreenSize().height - apple.getY() * Constants.CELL_SIZE,
+                getGame().getScreenSize().height - apple.getY() * Constants.CELL_SIZE,
                 Constants.CELL_SIZE,
                 Constants.CELL_SIZE);
     }

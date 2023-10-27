@@ -1,9 +1,11 @@
-package com.wingmann.snake;
+package com.wingmann.snake.gameobjects;
+
+import com.wingmann.snake.util.Direction;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Snake {
+public class Snake {
     public int startX;
     public int startY;
     public Direction direction;

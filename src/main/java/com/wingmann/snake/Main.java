@@ -1,5 +1,11 @@
 package com.wingmann.snake;
 
+import com.wingmann.snake.data.Constants;
+import com.wingmann.snake.data.Strings;
+import com.wingmann.snake.game.Game;
+import com.wingmann.snake.game.GameFactory;
+import com.wingmann.snake.scene.MainMenuScene;
+
 import java.awt.Dimension;
 
 public class Main {

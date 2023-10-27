@@ -1,4 +1,4 @@
-package com.wingmann.snake;
+package com.wingmann.snake.data;
 
 public class Constants {
     public static final int BOARD_WIDTH = 24;

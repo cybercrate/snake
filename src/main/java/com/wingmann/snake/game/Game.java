@@ -1,4 +1,7 @@
-package com.wingmann.snake;
+package com.wingmann.snake.game;
+
+import com.wingmann.snake.util.Input;
+import com.wingmann.snake.scene.Scene;
 
 import java.awt.Canvas;
 import java.awt.Dimension;

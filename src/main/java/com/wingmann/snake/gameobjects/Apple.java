@@ -1,6 +1,6 @@
-package com.wingmann.snake;
+package com.wingmann.snake.gameobjects;
 
-class Apple {
+public class Apple {
     private final int x;
     private final int y;
 

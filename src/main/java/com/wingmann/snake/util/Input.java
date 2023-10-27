@@ -1,11 +1,11 @@
-package com.wingmann.snake;
+package com.wingmann.snake.util;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 
-class Input implements KeyListener {
+public class Input implements KeyListener {
     private final List<Event> events = new ArrayList<>();
 
     @Override

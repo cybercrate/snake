@@ -1,4 +1,9 @@
-package com.wingmann.snake;
+package com.wingmann.snake.scene;
+
+import com.wingmann.snake.data.Constants;
+import com.wingmann.snake.game.Game;
+import com.wingmann.snake.util.Input;
+import com.wingmann.snake.data.Strings;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -15,10 +20,10 @@ public class MainMenuScene extends Scene {
 
     @Override
     public void update(long timePassed) {
-        game.getInput().consumeEvents().forEach(event -> {
+        getGame().getInput().consumeEvents().forEach(event -> {
             if (event instanceof Input.Event.KeyPressed &&
                     ((Input.Event.KeyPressed) event).data.getKeyCode() == KeyEvent.VK_ENTER) {
-                game.setScene(new GameScene(game));
+                getGame().setScene(new GameScene(getGame()));
             }
         });
     }
@@ -26,7 +31,7 @@ public class MainMenuScene extends Scene {
     @Override
     public void draw(Graphics2D graphics) {
         graphics.setColor(Color.black);
-        graphics.fillRect(0, 0, game.getScreenSize().width, game.getScreenSize().height);
+        graphics.fillRect(0, 0, getGame().getScreenSize().width, getGame().getScreenSize().height);
 
         graphics.setFont(primaryFont);
         graphics.setColor(Color.white);
@@ -34,8 +39,8 @@ public class MainMenuScene extends Scene {
 
         graphics.drawString(
                 name,
-                game.getScreenSize().width / 2 - graphics.getFontMetrics().stringWidth(name) / 2,
-                game.getScreenSize().height / 2 - 50);
+                getGame().getScreenSize().width / 2 - graphics.getFontMetrics().stringWidth(name) / 2,
+                getGame().getScreenSize().height / 2 - 50);
 
         graphics.setFont(secondaryFont);
         graphics.setColor(Color.gray);
@@ -43,7 +48,7 @@ public class MainMenuScene extends Scene {
 
         graphics.drawString(
                 message,
-                game.getScreenSize().width / 2 - graphics.getFontMetrics().stringWidth(message) / 2,
-                game.getScreenSize().height / 2 + 50);
+                getGame().getScreenSize().width / 2 - graphics.getFontMetrics().stringWidth(message) / 2,
+                getGame().getScreenSize().height / 2 + 50);
     }
 }

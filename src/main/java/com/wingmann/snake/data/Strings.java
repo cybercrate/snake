@@ -1,4 +1,4 @@
-package com.wingmann.snake;
+package com.wingmann.snake.data;
 
 public class Strings {
     public static final String WINDOW_TITLE = "Snake";

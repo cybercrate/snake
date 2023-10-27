@@ -1,6 +1,6 @@
-package com.wingmann.snake;
+package com.wingmann.snake.gameobjects;
 
-class SnakePart {
+public class SnakePart {
     private int x;
     private int y;
 

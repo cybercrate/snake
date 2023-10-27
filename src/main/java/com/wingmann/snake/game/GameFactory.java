@@ -1,4 +1,4 @@
-package com.wingmann.snake;
+package com.wingmann.snake.game;
 
 import java.awt.Dimension;
 import java.awt.BorderLayout;

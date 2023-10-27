@@ -1,6 +1,6 @@
-package com.wingmann.snake;
+package com.wingmann.snake.util;
 
-enum Direction {
+public enum Direction {
     UP,
     RIGHT,
     DOWN,

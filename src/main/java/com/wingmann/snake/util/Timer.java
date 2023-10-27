@@ -1,6 +1,6 @@
-package com.wingmann.snake;
+package com.wingmann.snake.util;
 
-class Timer {
+public class Timer {
     private final long duration;
     private long remainingTime;
 
